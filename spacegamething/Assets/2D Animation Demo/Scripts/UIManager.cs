@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
     {
         
         // Gets and sets hi-score on highscore var
+        
         highScore = PlayerPrefs.GetInt("hi-score");
         //Enemy.enemyDead = 
         currentScoreText.text = currentScore.ToString("0000");

@@ -22,18 +22,18 @@ public class Player : MonoBehaviour
             // todo - trigger a "shoot" on the animator
             // playerAnimator.SetTrigger("Shoot");
             GameObject shot = Instantiate(bulletPrefab, shootOffsetTransform.position, Quaternion.identity);
-            Debug.Log("Bang!");
+            //Debug.Log("Bang!");
 
-            Destroy(shot, 3f);
+            Destroy(shot, 5f);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(0,.1f,0);
+            transform.Translate(0,.02f,0);
         }
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(0,-.1f,0);
+            transform.Translate(0,-.02f,0);
         }
     }
 }
