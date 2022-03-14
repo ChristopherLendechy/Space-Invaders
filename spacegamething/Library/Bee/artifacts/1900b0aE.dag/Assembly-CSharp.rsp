@@ -348,6 +348,7 @@
 "Assets/2D Animation Demo/Scripts/Enemy.cs"
 "Assets/2D Animation Demo/Scripts/EnemyBullet.cs"
 "Assets/2D Animation Demo/Scripts/EnemyController.cs"
+"Assets/2D Animation Demo/Scripts/Gm.cs"
 "Assets/2D Animation Demo/Scripts/Player.cs"
 "Assets/2D Animation Demo/Scripts/Shield.cs"
 "Assets/2D Animation Demo/Scripts/UIManager.cs"

@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/2D Animation Demo/Scenes/DemoScene.unity
+- path: Assets/2D Animation Demo/Scenes/Menu Transition.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

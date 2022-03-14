@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 public class Player : MonoBehaviour
@@ -9,7 +10,7 @@ public class Player : MonoBehaviour
 
     private Animator playerAnimator;
     private static readonly int Shoot = Animator.StringToHash("Shoot");
-
+    private
     //-----------------------------------------------------------------------------
     void Start()
     {
@@ -45,5 +46,6 @@ public class Player : MonoBehaviour
         Destroy(this);
         
         // transition to credits
+        SceneManager.LoadScene("Credits");
     }
 }
