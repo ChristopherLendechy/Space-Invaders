@@ -23,7 +23,7 @@ public class EnemyController : MonoBehaviour
 
         if (numberOfChildren != transform.childCount)
         {
-            stopTime -= .1f;
+            stopTime -= .05f;
             numberOfChildren = transform.childCount;
         } 
         cTime += Time.deltaTime;
@@ -34,6 +34,10 @@ public class EnemyController : MonoBehaviour
         }
 
         numberOfChildren = transform.childCount;
+        if (numberOfChildren == 0)
+        {
+            //transition to credits
+        }
     }
 
     public void SwitchDirection()

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Serialization;
 
 public class Player : MonoBehaviour
@@ -7,6 +8,7 @@ public class Player : MonoBehaviour
     [FormerlySerializedAs("shottingOffset")] public Transform shootOffsetTransform;
 
     private Animator playerAnimator;
+    private static readonly int Shoot = Animator.StringToHash("Shoot");
 
     //-----------------------------------------------------------------------------
     void Start()
@@ -20,7 +22,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             // todo - trigger a "shoot" on the animator
-            // playerAnimator.SetTrigger("Shoot");
+            playerAnimator.SetTrigger(Shoot);
             GameObject shot = Instantiate(bulletPrefab, shootOffsetTransform.position, Quaternion.identity);
             //Debug.Log("Bang!");
 
@@ -29,11 +31,19 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(0,.02f,0);
+            transform.Translate(0,.05f,0);
         }
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(0,-.02f,0);
+            transform.Translate(0,-.05f,0);
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        playerAnimator.SetTrigger("Death");
+        Destroy(this);
+        
+        // transition to credits
     }
 }

@@ -23,6 +23,9 @@ public class Enemy : MonoBehaviour
 
     public int enemyValue;
     float accumulatedTime;
+    private Animator enemyAnimator;
+    private static readonly int ADeath = Animator.StringToHash("aDeath");
+
     public void Update()
     {
         
@@ -32,13 +35,14 @@ public class Enemy : MonoBehaviour
             enemyShot();
             accumulatedTime = 0;
         }
+        
     }
     
     private void Start()
     {
         GameObject uiManagerObject = GameObject.FindWithTag("UIManagerController");
         uiManagerScript = uiManagerObject.GetComponent<UIManager>();
-        
+        enemyAnimator = GetComponent<Animator>();
         
         
     }
@@ -49,7 +53,7 @@ public class Enemy : MonoBehaviour
         GameObject shot = Instantiate(bulletPrefab, shootOffsetTransform.position, Quaternion.identity);
         //Debug.Log("Bang!");
 
-        Destroy(shot, 3f);
+        Destroy(shot, 5f);
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -69,11 +73,16 @@ public class Enemy : MonoBehaviour
             
             uiManagerScript.addScore(enemyValue);
             // remove enemy object
-            Destroy(gameObject);
+            enemyAnimator.SetTrigger(ADeath);
+            StartCoroutine(Die());
             //Debug.Log("Ouch!");
         }
     }
-
+    IEnumerator Die(){
+        
+        yield return new WaitForSeconds(1); //waits 3 seconds
+        Destroy(gameObject); //this will work after 3 seconds.
+    }
     void enemyShot()
     {
         float rand = Random.Range(1f, 30f);
