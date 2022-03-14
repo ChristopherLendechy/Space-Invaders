@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
@@ -42,10 +43,21 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
+        StartCoroutine(LoseCoroutine());
         playerAnimator.SetTrigger("Death");
-        Destroy(this);
+        
         
         // transition to credits
+        // Invoke("Lose",2f);
+        
+    }
+
+   
+    IEnumerator LoseCoroutine()
+    {
+        
+        yield return new WaitForSeconds(2);
         SceneManager.LoadScene("Credits");
+        Destroy(this);
     }
 }
