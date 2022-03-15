@@ -350,6 +350,7 @@
 "Assets/2D Animation Demo/Scripts/EnemyBullet.cs"
 "Assets/2D Animation Demo/Scripts/EnemyController.cs"
 "Assets/2D Animation Demo/Scripts/Gm.cs"
+"Assets/2D Animation Demo/Scripts/MothershipSpawn.cs"
 "Assets/2D Animation Demo/Scripts/NewBehaviourScript.cs"
 "Assets/2D Animation Demo/Scripts/Player.cs"
 "Assets/2D Animation Demo/Scripts/Shield.cs"

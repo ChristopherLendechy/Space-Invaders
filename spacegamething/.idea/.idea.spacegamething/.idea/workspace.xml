@@ -7,6 +7,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../../../mario clone/platformer/platformer/Assets/Platformer/Scripts/LevelParser.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -63,6 +66,7 @@
       <workItem from="1647206269277" duration="5946000" />
       <workItem from="1647253543698" duration="449000" />
       <workItem from="1647295580587" duration="4967000" />
+      <workItem from="1647302525209" duration="2272000" />
     </task>
     <servers />
   </component>

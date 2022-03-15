@@ -24,7 +24,7 @@ namespace _2D_Animation_Demo.Scripts
 
             // remove  object
             Destroy(gameObject);
-            Debug.Log("Ouch!");
+            
         
         }
     }
